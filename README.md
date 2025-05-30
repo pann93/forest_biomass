@@ -1,6 +1,7 @@
 # Description #
 
-This project provides the Biomass estimation using NVDI calculation from MS images. The required images are uploaded in Google Drive and  will be automatically downloaded by the script.
+This project provides ***Biomass estimation*** using NVDI calculation from MS images. 
+The required images are uploaded in Google Drive and  will be automatically downloaded by the script.
 
 
 * Data Source: Sentinel-2 multispectral satellite imagery covering a some forest region in Brazil. 
@@ -16,11 +17,11 @@ This project provides the Biomass estimation using NVDI calculation from MS imag
 
 (1) Calculate area of one pixel using spatial resolution:
 
-    Area/pixel (m²/pixel) = pixel_size_xpixel_size_y 
+    Area/pixel (m²/pixel) = pixel_size_x * pixel_size_y 
 
 (2) Derive biomass density by using the following equations:
 
-    Biomass Density (tons/ha)= m × NDVI + c 
+    Biomass Density (tons/ha)= m * NDVI + c 
 
     where, m and c are the coefficients come from field calibration. 
 
@@ -54,10 +55,10 @@ This project provides the Biomass estimation using NVDI calculation from MS imag
 
 ### For running entire image
 
-```python DAI_test3.py --tci Testimages/T22LDN_20240628T133839_TCI_20m.jp2  --red Testimages/T22LDN_20240628T133839_B04_20m.jp2 --nir Testimages/T22LDN_20240628T133839_B8A_20m.jp2 --quarter 0 --save-img tester0.png```
+```python BioMass_Test.py --tci Testimages/T22LDN_20240628T133839_TCI_20m.jp2  --red Testimages/T22LDN_20240628T133839_B04_20m.jp2 --nir Testimages/T22LDN_20240628T133839_B8A_20m.jp2 --quarter 0 --save-img tester0.png```
 
 ### For running slice image (quarter_no = 1 ~ 4)
 
-```python DAI_test3.py --tci Testimages/T22LDN_20240628T133839_TCI_20m.jp2  --red Testimages/T22LDN_20240628T133839_B04_20m.jp2 --nir Testimages/T22LDN_20240628T133839_B8A_20m.jp2 --quarter {quarter_no} --save-img {resultname.png}```
+```python BioMass_Test.py --tci Testimages/T22LDN_20240628T133839_TCI_20m.jp2  --red Testimages/T22LDN_20240628T133839_B04_20m.jp2 --nir Testimages/T22LDN_20240628T133839_B8A_20m.jp2 --quarter {quarter_no} --save-img {resultname.png}```
 
 
